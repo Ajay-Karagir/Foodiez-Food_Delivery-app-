@@ -39,7 +39,6 @@ export default function Card(props) {
     }
 };
 
-
   useEffect(() => {
     setSize(priceRef.current.value);
   }, []);
@@ -60,9 +59,9 @@ export default function Card(props) {
           <h5 className="card-title" style={{ marginBottom: "10px" }}>{props.foodItem.name}</h5>
           <div className="container w-100" style={{ marginBottom: "10px" }}>
             <select
-              className="m-2 h-100 bg-success text-white rounded"
+              className="m-2 h-100"
+              style={{ backgroundColor: '#FF851B', color: 'white', borderRadius: '5px', marginRight: '10px' }}
               onChange={(e) => setQty(parseInt(e.target.value))}
-              style={{ marginRight: "10px" }}
             >
               {Array.from(Array(6), (_, i) => (
                 <option key={i + 1} value={i + 1}>
@@ -72,10 +71,10 @@ export default function Card(props) {
             </select>
 
             <select
-              className="m-2 h-100 bg-success text-white rounded"
+              className="m-2 h-100"
+              style={{ backgroundColor: '#FF851B', color: 'white', borderRadius: '5px', marginRight: '10px' }}
               ref={priceRef}
               onChange={(e) => setSize(e.target.value)}
-              style={{ marginRight: "10px" }}
             >
               {priceOptions.map((data) => (
                 <option key={data} value={data}>
@@ -90,9 +89,9 @@ export default function Card(props) {
           <hr style={{ margin: "10px 0" }} />
 
           <button
-            className="btn btn-success justify-content-center ms-2"
+            className="btn justify-content-center ms-2"
+            style={{ backgroundColor: '#FF851B', color: 'white', marginTop: "10px", marginBottom: "10px", width: "100%" }}
             onClick={handleAddToCart}
-            style={{ marginTop: "10px", marginBottom: "10px", width: "100%" }}
           >
             Add to Cart
           </button>
